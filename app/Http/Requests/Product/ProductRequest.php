@@ -12,7 +12,7 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'nullable',
-            'price' => 'required|float',
+            'price' => 'required|numeric',
             'image' => 'nullable|image',
         ];
     }
