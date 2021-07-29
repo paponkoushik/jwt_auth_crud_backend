@@ -18,7 +18,10 @@ class ProductService extends BaseService
 
     public function store(): ProductService
     {
-        $this->uploadFile();
+        if ($this->getAttr('image')) {
+            $this->uploadFile();
+        }
+
 
         $this->model = parent::save($this->getAttrs());
 
