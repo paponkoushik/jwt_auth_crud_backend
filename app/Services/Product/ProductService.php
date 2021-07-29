@@ -22,7 +22,6 @@ class ProductService extends BaseService
             $this->uploadFile();
         }
 
-
         $this->model = parent::save($this->getAttrs());
 
         return $this;
@@ -34,5 +33,14 @@ class ProductService extends BaseService
             'image',
             $this->storeFile($this->getAttr('image'))
         );
+    }
+
+    public function update(): ProductService
+    {
+        if ($this->getAttr('image')) $this->uploadFile();
+
+        $this->model->fill($this->getAttrs())->save();
+
+        return $this;
     }
 }

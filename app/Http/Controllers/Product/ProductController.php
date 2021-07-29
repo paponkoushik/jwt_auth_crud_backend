@@ -8,6 +8,7 @@ use App\Http\Requests\Product\ProductRequest;
 use App\Models\Product;
 use App\Services\Product\ProductService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
@@ -48,7 +49,7 @@ class ProductController extends Controller
             $this->service
                 ->setAttrs($request->only('title', 'description', 'price', 'image'))
                 ->setModel($product)
-                ->save();
+                ->update();
         });
 
         return response()->json('Product has been updated successfully', 200);
