@@ -37,6 +37,11 @@ class BaseService
         return $this->attributes;
     }
 
+    public function getAttr($key, $default = null)
+    {
+        return isset($this->attributes[$key]) ? $this->attributes[$key] : $default;
+    }
+
     public function setModel(Model $model): BaseService
     {
         $this->model = $model;
