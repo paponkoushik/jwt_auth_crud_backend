@@ -1,4 +1,7 @@
 #### Note: All API's link start with Domain of your apps
+#### Note: Use Database migrate and database seed command.
+```php artisan migrate```
+```php artisan db:seed```
 #### Example: Domain is http://127.0.0.1:8000/
 #### Login Api:
 URL(POST request):  ```your-domain/api/auth/login```
